@@ -6,6 +6,7 @@ import {useHistory} from 'react-router-dom';
 function Home(props /* propriedades */) {
   const history = useHistory();
   const [usuario, setUsuario] = useState('');
+  const [erro, setErro] = useState(false);
   
   function handleSearch(){
     axios.get(`https://api.github.com/users/${usuario}/repos`).then(response => {
@@ -15,15 +16,21 @@ function Home(props /* propriedades */) {
         repositoriesName.push(repository.name);
       });
       localStorage.setItem('repositoriesName', JSON.stringify(repositoriesName));
+      setErro(false);
       history.push('/repositories');
+    }).catch(err => {
+      setErro(true);
     });
   }
   return (
-
-    <S.Container>
-      <S.Input className="usuarioInput" placeholder="Usuário" value={usuario} onChange={event => setUsuario(event.target.value)} />
-      <S.Button type="button" onClick={handleSearch}>Pesquisar</S.Button>
-    </S.Container>
+    <S.HomeContainer>
+      <S.Content>
+        <S.Input className="usuarioInput" placeholder="Usuário" value={usuario} onChange={event => setUsuario(event.target.value)} />
+        <S.Button type="button" onClick={handleSearch}>Pesquisar</S.Button>
+      </S.Content>
+      {erro ? <S.ErrorMsg>Ocorreu um erro</S.ErrorMsg> : ''}
+    </S.HomeContainer>
+    
   );
 }
 
