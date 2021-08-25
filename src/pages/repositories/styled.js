@@ -23,10 +23,11 @@ export const List = styled.ul`
   list-style: none;
   padding: none;
   font-family: sans-serif;
+  width: 100%;
 `;
 
 export const ListItem = styled.li`
-  margin: .5rem 0;
+  margin: .5rem .2rem;
   background: #000;
   color: #fff;
   padding: .5rem;

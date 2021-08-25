@@ -27,14 +27,26 @@ export const UserWrapper = styled.div`
   display: flex;
   align-items: center;
   
-  gap: 80px
-  
+  gap: 80px;
+
+  @media(max-width: 670px){
+    gap: 60px;
+  }
+  @media(max-width: 630px){
+    gap: 40px;
+  }
+  @media(max-width: 590px){
+    gap: 30px;
+  }
+  @media(max-width: 470px){
+    flex-direction: column;
+    gap: 10px;
+   }
 `
 
 export const UserAvatar = styled.img`
   border-radius: 50%;
   box-shadow: 0 0 5px #B7B7B7;
-  margin-left: 10px;
   cursor: pointer;
 
   width: 140px;
@@ -44,6 +56,16 @@ export const UserAvatar = styled.img`
   &:hover{
     transform: scale(1.08);
   }
+
+  @media(max-width: 815px){
+    width:  100px;
+    height: 100px;
+   }
+   @media(max-width: 590px){
+    width:  80px;
+    height: 80px;
+   }
+  
 `
 
 export const UserName = styled.h1`
@@ -54,18 +76,44 @@ export const UserName = styled.h1`
   color: #B7B7B7;
 
   text-shadow: 0 0 4px #B7B7B7;
+
+  @media(max-width: 920px){
+   font-size: 1.8rem; 
+  }
+  @media(max-width: 880px){
+    font-size: 1.5rem; 
+   }
+   @media(max-width: 815px){
+    font-size: 1.2rem; 
+   }
+   @media(max-width: 590px){
+    font-size: 0.9rem;
+   }
 `
 
 export const UserBio = styled.p`
   text-align: center;
   font-family: sans-serif;
   color: #B7B7B7;
+
+  width: 100%;
+  @media(max-width: 790px){
+    font-size: 0.9rem; 
+   }
+   @media(max-width: 470px){
+    font-size: 0.75rem; 
+   }
 `
 
 export const UserData = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px;
+
+  @media(max-width: 780px){
+    flex-direction:  column;
+   }
 
 `
 export const UserParagraphy = styled.p`
@@ -86,8 +134,6 @@ export const UserDataNumber = styled.p`
 `
 
 export const UserProjects = styled.div`
-
-  margin-right: 20px;
   border: 1px solid #000;
   background: #046313;
   border-radius: 8px;
@@ -99,6 +145,11 @@ export const UserProjects = styled.div`
     transform: scale(1.08);
     cursor: pointer;
   }  
+
+  @media(max-width: 780px){
+    width: 80%;
+    margin-right: 0;
+   }
 `
 
 export const LinkRepos = styled(Link)`
@@ -106,7 +157,6 @@ export const LinkRepos = styled(Link)`
 `
 
 export const UserFollowers = styled.div`
-  margin-right: 20px;
   border: 1px solid #000;
   background: #044A7D;
   border-radius: 8px;
@@ -119,9 +169,12 @@ export const UserFollowers = styled.div`
     cursor: pointer;
   }
 
+  @media(max-width: 780px){
+    width: 80%;
+    margin-right: 0;
+   }
 `
 export const UserFollowing = styled.div`
-  margin-right: 20px;
   border: 1px solid #000;
   background: #725200;
   border-radius: 8px;
@@ -133,4 +186,8 @@ export const UserFollowing = styled.div`
     transform: scale(1.08);
     cursor: pointer;
   }
+  @media(max-width: 780px){
+    width: 80%;
+    margin-right: 0;
+   }
 `
