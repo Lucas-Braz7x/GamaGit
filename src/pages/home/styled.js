@@ -39,8 +39,11 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 `
+export const InputContainer = styled.div`
 
+`
 export const ErrorMsg = styled.span`
   display: block;
   font-size: 0.65rem;
