@@ -11,3 +11,9 @@ Aplicação desenvolvida nas aulas de react do HC2, que utiliza a API do github 
   - Armazenamento no storage
   - Axios
   - Responsividade
+
+# Como Rodar:
+
+  - Faça um git clone do repositório
+  - Execute um npm install
+  - Depois um npm start
