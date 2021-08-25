@@ -16,6 +16,11 @@ export const Container = styled.div`
 
   padding: 10px;
   box-sizing: border-box;
+
+  transition: transform 2s;
+  &:hover{
+    transform: scale(1.08)
+  }
 `
 
 export const UserWrapper = styled.div`

@@ -16,19 +16,21 @@ export default function Repositories (){
       history.push('/');
     }
     
-  }, []);
+  }, [history]);
   return(
     <S.Container>
-      <S.Title>Repositórios</S.Title>
-      <S.List>
-        { repositories.map(repository =>{
-          return(
-            <S.ListItem>Repositório: {repository}</S.ListItem>
-          )
-        }) 
-        }
-      </S.List>
-      <S.LinkHome to="/">Voltar</S.LinkHome>
+      <S.Content>
+        <S.Title>Repositórios</S.Title>
+        <S.List>
+          { repositories.map(repository =>{
+            return(
+              <S.ListItem>Repositório: {repository}</S.ListItem>
+              )
+            }) 
+          }
+        </S.List>
+        <S.LinkHome to="/">Voltar</S.LinkHome>
+      </S.Content>
     </S.Container>
   )
 }

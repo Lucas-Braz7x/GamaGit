@@ -32,6 +32,7 @@ export const HomeContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background: radial-gradient(#b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #aa22bf 66%, #aa22bf 100%);
 `
 
 export const Content = styled.div`
