@@ -1,5 +1,11 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
+
+const animate = keyframes`
+  0%{opacity: 0;}
+  50%{opacity: .5;}
+  100%{opacity: 1;}
+`
 
 export const Container = styled.div`
   display: flex;
@@ -21,6 +27,8 @@ export const Container = styled.div`
   &:hover{
     transform: scale(1.08)
   }
+
+  animation: ${animate} 3s .2;
 `
 
 export const UserWrapper = styled.div`

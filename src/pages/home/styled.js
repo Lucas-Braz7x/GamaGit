@@ -1,4 +1,10 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const animate = keyframes`
+  0%{opacity: 0;}
+  50%{opacity: .5;}
+  100%{opacity: 1;}
+`
 
 export const Input = styled.input`
   border: 1px solid #ddd;
@@ -39,8 +45,16 @@ export const Content = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space;
   flex-direction: column;
+
+  gap: 30px;
+`
+
+export const Title = styled.h1`
+  text-shadow: 1px 5px 20px black;
+  perspective: 1000;
+  animation: ${animate} 3s .3s;
 `
 export const InputContainer = styled.div`
 

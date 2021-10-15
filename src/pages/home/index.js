@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import * as S from './styled';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { UserCard } from '../../components/User-card/UserCard';
 
 function Home() {
@@ -9,15 +9,15 @@ function Home() {
   const [usuario, setUsuario] = useState('');
   const [erro, setErro] = useState(false);
   const [userInfo, setUserInfo] = useState([]);
-  
-  async function  handleSearchUserInfo(){
+
+  async function handleSearchUserInfo() {
     await axios.get(`https://api.github.com/users/${usuario}`).then(response => {
-      const userResponse =  response.data;
+      const userResponse = response.data;
       setUserInfo(userResponse);
     })
   }
-  
-  function handleSearch(){
+
+  function handleSearch() {
     axios.get(`https://api.github.com/users/${usuario}/repos`).then(response => {
       const repositories = response.data;
       const repositoriesName = [];
@@ -34,17 +34,19 @@ function Home() {
   return (
     <S.HomeContainer>
       <S.Content>
+        <S.Title>Pesquise um Repositório do GitHub</S.Title>
         <S.InputContainer>
-          <S.Input 
-          className="usuarioInput" 
-          placeholder="Usuário" 
-          value={usuario} 
-          onChange={ event => setUsuario(event.target.value)} 
+
+          <S.Input
+            className="usuarioInput"
+            placeholder="Usuário"
+            value={usuario}
+            onChange={event => setUsuario(event.target.value)}
           />
           <S.Button type="button" onClick={/* handleSearch */handleSearchUserInfo}>Pesquisar</S.Button>
         </S.InputContainer>
-        {usuario === userInfo.login && 
-          <UserCard 
+        {usuario === userInfo.login &&
+          <UserCard
             userInfo={userInfo}
             handleSearch={handleSearch}
           />
@@ -52,7 +54,7 @@ function Home() {
       </S.Content>
       {erro ? <S.ErrorMsg>Ocorreu um erro</S.ErrorMsg> : ''}
     </S.HomeContainer>
-    
+
   );
 }
 
