@@ -19,5 +19,5 @@ Aplicação desenvolvida nas aulas de react do HC2, que utiliza a API do github 
   - Depois um npm start
 
 # Deploy
-  -Vercel
+  - Vercel
   - [Link da aplicação](https://gama-git-xi.vercel.app/)
