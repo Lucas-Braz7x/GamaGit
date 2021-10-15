@@ -1,4 +1,4 @@
-## GamaGit
+## [GamaGit](https://gama-git-xi.vercel.app/)
 Aplicação desenvolvida nas aulas de react do HC2, que utiliza a API do github para listar os repositórios com base no nome do usuário, que é fornecido pelo cliente. Algumas alterações pessoais:
   - Busca pelas informações do usuário
   - Exibição dessas informações, através de um card
@@ -17,3 +17,7 @@ Aplicação desenvolvida nas aulas de react do HC2, que utiliza a API do github 
   - Faça um git clone do repositório
   - Execute um npm install
   - Depois um npm start
+
+# Deploy
+  -Vercel
+  - [Link da aplicação](https://gama-git-xi.vercel.app/)
